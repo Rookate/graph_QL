@@ -5,18 +5,14 @@ import Profile from "@/components/profile";
 import SkeletonProfile from "@/components/skeleton/SkeletonProfile";
 import Header from "@/components/header";
 import Dashboard from "@/components/dashboard";
-import { ModeToggle } from "@/components/theme";
 import ArrowRight from "@/components/ui/arrowRight";
 import LabelIcon from "@/components/ui/labelIcon";
 import SkeletonHeader from "@/components/skeleton/SkeletonHeader";
 import SkeletonDashboard from "@/components/skeleton/SkeletonDashboard";
 import SkeletonLabel from "@/components/skeleton/SkeletonLabel";
-import SkeletonTimeline from "@/components/skeleton/SkeletonTimeline";
 import { useAuth } from "./context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useUser } from "./context/userContext";
-import Image from "next/image";
-import LogoutSvg from "@/components/ui/logoutSvg";
 
 export default function Home() {
   const { isUser, loading } = useAuth();

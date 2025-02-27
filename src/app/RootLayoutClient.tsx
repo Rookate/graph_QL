@@ -1,4 +1,4 @@
-"use client"; // Indique que ce fichier doit être traité côté client
+"use client";
 
 import { usePathname } from "next/navigation";
 import Link from 'next/link';

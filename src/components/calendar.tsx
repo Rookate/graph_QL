@@ -14,7 +14,7 @@ export default function Calendar() {
                 </div>
             </div>
             <div className="mt-auto p-6 text-[var(--black75)] text-sm" style={{ boxShadow: "inset 0 15px 20px rgba(0, 0, 0, 0.25)" }}>
-                No events today, you're free!
+                {"No events today, you're free!"}
             </div>
         </div>
     );

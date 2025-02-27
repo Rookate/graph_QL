@@ -1,6 +1,4 @@
 import { useUser } from "@/app/context/userContext";
-import { Value } from "@radix-ui/react-select";
-import { Label } from "recharts";
 
 export default function ProfileInfo() {
     const { user } = useUser();

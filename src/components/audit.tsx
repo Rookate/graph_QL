@@ -20,7 +20,7 @@ export default function Audit() {
                     </div>
                 </>
             ) : (
-                <div className="text-[var(--teal60)] mt-10 text-xl">No audit to do, you're good!</div>
+                <div className="text-[var(--teal60)] mt-10 text-xl">{"No audit to do, you're good!"}</div>
             )}
 
             <div className="flex gap-2 items-center mt-auto">

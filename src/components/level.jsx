@@ -1,10 +1,8 @@
 'use client';
 import { useUser } from "@/app/context/userContext";
-import SvgLevel from "./ui/levelSvg";
 
 export default function Level() {
     const { level } = useUser();
-    console.log("level", level)
     const totalDots = 36;
 
     // Création du cercle de points

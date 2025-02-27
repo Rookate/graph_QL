@@ -11,7 +11,6 @@ import { useUser } from "@/app/context/userContext";
 
 export default function Dashboard() {
     const { loader } = useUser();
-    console.log("loader", loader)
     if (!loader) {
         return (
             <div className="grid grid-cols-4 gap-6 min-h-screen auto-rows-fr">

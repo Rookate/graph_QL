@@ -5,14 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { capitalizeFirstLetter, formatTaille } from "@/app/lib/utils";
 import { useUser } from "@/app/context/userContext";
 
-// const projs = [
-//     { type: "Project", name: "real-time-forum-typing-in-progress", amount: "51.8 kB" },
-//     { type: "Project", name: "real-time-forum", amount: "154 kB" },
-//     { type: "Project", name: "make-your-game-score-handling", amount: "49.0 kB" },
-//     { type: "Project", name: "make-your-game-history", amount: "49.0 kB" },
-// ];
-
-
 export default function Xps() {
     const { xps, projects } = useUser();
 
