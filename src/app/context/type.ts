@@ -45,7 +45,7 @@ interface Project {
     };
 }
 
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface UserContextType {
     user: { user: User[] } | null;
     loader: boolean;
@@ -109,6 +109,7 @@ interface LastProject {
     }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type EventData = {
     event: {
         id: number;
