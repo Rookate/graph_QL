@@ -26,7 +26,7 @@ export default function Home() {
       .filter(event => event !== null && event !== undefined);
 
     setGalaxie(selected[0]?.object?.name);
-  }, [selectedCursus]);
+  }, [selectedCursus, cursus]);
 
 
   useEffect(() => {

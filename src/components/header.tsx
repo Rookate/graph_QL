@@ -4,7 +4,7 @@ import { useUser } from '@/app/context/userContext';
 import { useState } from 'react';
 
 export default function Header() {
-    const { cursus, selectedCursus, setSelectedCursus } = useUser();
+    const { cursus, setSelectedCursus } = useUser();
     const [currentCursus, setCurrentCursus] = useState(1)
 
     return (

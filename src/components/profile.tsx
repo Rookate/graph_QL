@@ -1,6 +1,5 @@
 import { useUser } from "@/app/context/userContext";
 import ProfilePage from "./profile-page";
-import Icon from "./ui/profile-icone";
 
 export default function Profile() {
     const { user } = useUser();

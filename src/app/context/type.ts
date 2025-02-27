@@ -57,7 +57,7 @@ interface UserContextType {
     selectedCursus: number | null;
     project: LastProject | undefined;
     setSelectedCursus: React.Dispatch<React.SetStateAction<number | null>>;
-    fetchData: (query: string, setState: React.Dispatch<React.SetStateAction<any>>) => Promise<void>;
+    fetchData: <T>(query: string, setState: React.Dispatch<React.SetStateAction<T>>) => Promise<void>;
 }
 
 interface EventObject {
@@ -108,3 +108,9 @@ interface LastProject {
         type: string,
     }
 }
+
+type EventData = {
+    event: {
+        id: number;
+    };
+};

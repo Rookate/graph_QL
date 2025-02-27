@@ -59,7 +59,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
         const getCursusData = async () => {
             try {
                 const data = await fetchCursusData();
-                const eventIds = data?.user[0]?.events.map((event: any) => event.event.id);
+                const eventIds = data?.user[0]?.events.map((event: EventData) => event.event.id);
                 const infoPromises = eventIds?.map((id: number) => fetchCursusInfoData(id));
 
                 const cursusDetails = infoPromises ? await Promise.all(infoPromises) : [];

@@ -18,7 +18,7 @@ export default function Audit() {
             <div className="pt-6">{"Here you can find back all your audits : the ones you have to make and the ones you've already made for other students projects."}</div>
             <div className="pb-6">{"For the audits you have to do, hover the block to get the verification code you'll need to complete the audit on your classmate computer."}</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4">
-                {audit?.map((project: any, index: number) => {
+                {audit?.map((project: Audit, index: number) => {
                     const isInProgress = project?.grade === null && project?.resultId === null;
 
                     return (
