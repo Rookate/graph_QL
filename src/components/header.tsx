@@ -8,7 +8,7 @@ export default function Header() {
     const [currentCursus, setCurrentCursus] = useState(1)
 
     return (
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between">
             {cursus && cursus?.map((section, index) => (
                 <div
                     key={index}

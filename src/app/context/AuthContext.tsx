@@ -34,10 +34,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setLoading(true);
         const token = await loginUser(email, password);
 
-        if (token) {
-            setUser(true);
-            router.push("/");
+        if (!token) {
+            setLoading(false);
+            throw new Error("Échec de l'authentification");
         }
+
+        setUser(true);
+        router.push("/");
         setLoading(false);
     };
 

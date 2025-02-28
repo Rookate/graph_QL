@@ -5,10 +5,12 @@ export default function Profile() {
     const { user } = useUser();
     return (
         <div className="flex mt-20">
-            <h1 className="text-6xl">{`Welcome, ${user?.user[0]?.attrs?.firstName} ${user?.user[0]?.attrs?.lastName}!`}</h1>
+            <div className="lg:text-6xl sm:text-2xl md:text-3xl">{`Welcome, ${user?.user[0]?.attrs?.firstName} ${user?.user[0]?.attrs?.lastName}!`}</div>
             <div className="ml-auto">
                 <ProfilePage />
             </div>
         </div>
     )
 }
+
+// npm install --legacy-peer-deps

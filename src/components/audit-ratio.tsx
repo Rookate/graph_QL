@@ -15,7 +15,7 @@ export default function AuditRatioCard() {
 
     const ratio = done && received ? parseFloat((done / received).toFixed(1)) : null;
     return (
-        <div className="col-span-1 p-4 bg-[var(--bgLevel3)] overflow-hidden flex flex-col text-xl hover:bg-[var(--bgLevel2)] transition-colors duration-300 shadow-lg">
+        <div className="col-span-2 sm:col-span-1 p-4 bg-[var(--bgLevel3)] overflow-hidden flex flex-col text-xl hover:bg-[var(--bgLevel2)] transition-colors duration-300 shadow-lg">
             {/* Titre */}
             <h3>Audits Ratio</h3>
 

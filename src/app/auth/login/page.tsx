@@ -9,14 +9,21 @@ export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null); // État pour gérer les erreurs
 
     useEffect(() => {
         setLoading(false);
     }, []);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        login(email, password);
+        setError(null);
+
+        try {
+            await login(email, password);
+        } catch (err) {
+            setError("Email or Password incorrect.");
+        }
     };
 
     if (loading) {
@@ -24,12 +31,12 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="flex flex-col w-full items-center justify-center min-h-screen ">
+        <div className="flex flex-col w-full items-center justify-center min-h-screen">
             <div>
                 <Image className="object-contain fixed top-5 left-5" src="/Zone01.png" alt="Description de l'image" width={150} height={150} />
             </div>
             <h1 className="text-2xl mb-6">Welcome to Zone 01</h1>
-            <form onSubmit={handleSubmit} className="flex flex-col w-1/3 gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:w-2/3 lg:w-1/3 gap-4">
                 <input
                     type="email"
                     placeholder="Email"
@@ -45,6 +52,8 @@ export default function LoginPage() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit" className="bg-blue-500 text-white p-2 rounded">Login</button>
+
+                {error && <span className="text-red-500 text-sm">{error}</span>} {/* Affichage de l'erreur */}
             </form>
         </div>
     );

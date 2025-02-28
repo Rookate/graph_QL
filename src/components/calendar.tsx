@@ -5,7 +5,7 @@ export default function Calendar() {
     const shortMonth = today.toLocaleDateString("en-US", { month: "short" });
 
     return (
-        <div className="h-full flex flex-col bg-[var(--greyHighlighted)] text-xl col-span-1">
+        <div className="h-full flex flex-col bg-[var(--greyHighlighted)] col-span-2 sm:text-xl sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 p-6">
                 <div className="text-[var(--purple40)] text-6xl">{day}</div>
                 <div className="text-[var(--black75)] ">

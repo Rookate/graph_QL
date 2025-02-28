@@ -24,7 +24,7 @@ export default function Level() {
     }
 
     return (
-        <div className="bg-[var(--greyHighlighted)] col-span-1 row-span-2 p-6">
+        <div className="bg-[var(--greyHighlighted)] col-span-2 sm:col-span-1 row-span-1 sm:row-span-2 py-6">
             <div className="flex flex-col mt-6 items-center w-full">
                 {/* Titre */}
                 <div className="text-center mb-2">

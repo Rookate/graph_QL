@@ -38,10 +38,8 @@ export default function Home() {
 
   const isLoading = loading || loader;
 
-
   return (
-    <div className="flex flex-col gap-10 p-24 pt-4">
-
+    <div className="w-full overflow-x-hidden flex flex-col gap-10 p-4 sm:p-4 md:p-12 lg:p-24 pt-4">
       {isLoading ? <SkeletonProfile /> : <Profile />}
 
       {/* Skeleton pour le Label */}
@@ -61,7 +59,7 @@ export default function Home() {
 
       {/* Skeleton pour la Timeline */}
       <div>
-        <div className={`flex items-center justify-between ${isLoading ? '' : 'border border-[var(--neutral)]'}  p-2`}>
+        <div className={`flex justify-between ${isLoading ? '' : 'border border-[var(--neutral)]'} p-2`}>
           <div className="flex items-center gap-6 text-xl">
             {isLoading ? (
               <>
@@ -71,11 +69,11 @@ export default function Home() {
             ) : (
               <>
                 <div>Graph</div>
-                <div className="text-[var(--textMinimal)]">Go back to your work where you left it last time!</div>
+                <div className="text-[var(--textMinimal)] text-sm sm:text-base md:text-lg">Go back to your work where you left it last time!</div>
               </>
             )}
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center ">
             {isLoading ? (
               <div className="bg-gray-300 dark:bg-gray-700 h-6 w-6 rounded-full animate-pulse"></div> // Arrow icon skeleton
             ) : (
@@ -101,7 +99,7 @@ export default function Home() {
             ) : (
               <>
                 <div>Timeline</div>
-                <div className="text-[var(--textMinimal)">{`${galaxie === "Cursus" ? "Check if you're progressing as expected!" : "Check the 01 Full Stack timeline!"} `}</div>
+                <div className="text-[var(--textMinimal) text-[var(--textMinimal)] text-sm sm:text-base md:text-lg">{`${galaxie === "Cursus" ? "Check if you're progressing as expected!" : "Check the 01 Full Stack timeline!"} `}</div>
               </>
             )}
           </div>

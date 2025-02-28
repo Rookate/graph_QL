@@ -8,15 +8,15 @@ export default function Audit() {
 
     const { audit } = useUser();
     return (
-        <div className="p-24 pt-16">
+        <div className="p-6 sm:p-12 md:p-16 lg:p-24 pt-16">
             <Link href={'/'} className="flex text-lg items-center mb-12 gap-2 hover:underline">
                 <div className="rotate-180"><ArrowRight /></div>
                 <div> Back to Profile</div>
             </Link>
             <div className="text-6xl mb-12">Audits</div>
             <div className="text-xl border-b border-neutral-500 pb-2">Your audits</div>
-            <div className="pt-6">{"Here you can find back all your audits : the ones you have to make and the ones you've already made for other students projects."}</div>
-            <div className="pb-6">{"For the audits you have to do, hover the block to get the verification code you'll need to complete the audit on your classmate computer."}</div>
+            <div className="pt-6 pb-5 text-sm sm:text-xl lg:pb-0">{"Here you can find back all your audits : the ones you have to make and the ones you've already made for other students projects."}</div>
+            <div className="pb-6 text-sm sm:text-xl">{"For the audits you have to do, hover the block to get the verification code you'll need to complete the audit on your classmate computer."}</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4">
                 {audit?.map((project: Audit, index: number) => {
                     const isInProgress = project?.grade === null && project?.resultId === null;
@@ -29,7 +29,7 @@ export default function Audit() {
                 `}
                         >
                             <div>
-                                <div className="text-lg">{project?.group?.object?.name} - <span className="text-neutral-400">{project?.group?.captainLogin}</span></div>
+                                <div className="text-xs text-ellipsis lg:text-lg">{project?.group?.object?.name} - <span className="text-neutral-400">{project?.group?.captainLogin}</span></div>
                             </div>
 
                             <div className="ml-auto">

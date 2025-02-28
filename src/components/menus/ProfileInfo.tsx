@@ -2,6 +2,7 @@ import { useUser } from "@/app/context/userContext";
 
 export default function ProfileInfo() {
     const { user } = useUser();
+    if (!user) return
     let formattedDate
 
     const dateStr = user?.user[0]?.attrs?.dateOfBirth;

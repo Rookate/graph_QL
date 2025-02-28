@@ -1,6 +1,6 @@
 export default function Status() {
     return (
-        <div className="col-span-1 row-span-2 p-6 bg-[var(--bgLevel3)] text-xl hover:bg-[var(--bgLevel2)] transition-colors duration-300">
+        <div className="col-span-2 row-span-1 p-6 bg-[var(--bgLevel3)] sm:col-span-1 sm:row-span-2 text-xl hover:bg-[var(--bgLevel2)] transition-colors duration-300">
             <div className="flex items-center justify-between">
                 <div className="text-base text-[var(--textMinimal)]">{"You're currently"}</div>
                 <div className="size-4 bg-[var(--tealFill)] rounded-full"></div>

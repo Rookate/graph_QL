@@ -73,8 +73,10 @@ export default function ProfilePage() {
 
                     {/* Menu principal */}
                     <div className="mt-6 space-y-2">
-                        {menuItems.map(item => {
+                        {menuItems.map((item) => {
                             const MenuComponent = menuComponents[item.id];
+                            const isOpen = openMenu === item.id;
+
                             return (
                                 <div key={item.id} className="bg-[var(--bgLevel3)] p-4 rounded-lg">
                                     {/* Titre cliquable */}
@@ -83,15 +85,15 @@ export default function ProfilePage() {
                                         onClick={() => toggleMenu(item.id)}
                                     >
                                         <span className="text-xl">{item.title}</span>
-                                        <span className="text-2xl">{openMenu === item.id ? <ArrowDown /> : <ArrowUp />}</span>
+                                        <span className="text-2xl transition-transform duration-300 ease-in-out"
+                                            style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+                                            {isOpen ? <ArrowDown /> : <ArrowUp />}
+                                        </span>
                                     </div>
 
-                                    {/* Contenu du sous-menu (affiché si ouvert) */}
-                                    {openMenu === item.id && MenuComponent && (
-                                        <div className="mt-3 text-sm text-[var(--textMinimal)] transition-all duration-500">
-                                            <MenuComponent />
-                                        </div>
-                                    )}
+                                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[1000px] opacity-100 mt-3" : "max-h-0 opacity-0"}`}>
+                                        {MenuComponent && <MenuComponent />}
+                                    </div>
                                 </div>
                             );
                         })}

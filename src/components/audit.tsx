@@ -9,7 +9,7 @@ export default function Audit() {
     const { audit } = useUser();
     const isInProgress = audit && audit[0]?.grade === null && audit[0]?.resultId === null;
     return (
-        <div className="flex flex-col col-span-2 p-6 bg-[var(--bgLevel3)] text-xl hover:bg-[var(--bgLevel2)] transition-colors duration-300">
+        <div className="flex flex-col col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-2 p-6 bg-[var(--bgLevel3)] text-xl hover:bg-[var(--bgLevel2)] transition-colors duration-300">
             <div>Audit</div>
             {isInProgress ? (
                 <>
@@ -20,11 +20,11 @@ export default function Audit() {
                     </div>
                 </>
             ) : (
-                <div className="text-[var(--teal60)] mt-10 text-xl">{"No audit to do, you're good!"}</div>
+                <div className="text-[var(--teal60)] mt-10 text-sm sm:text-base lg:text-xl">{"No audit to do, you're good!"}</div>
             )}
 
-            <div className="flex gap-2 items-center mt-auto">
-                <div>You can check back your audit history</div>
+            <div className="flex flex-col lg:flex-row gap-2 items-center mt-auto">
+                <div className="text-sm sm:text-base lg:text-xl">You can check back your audit history</div>
                 <div className="ml-auto text-[var(--purple)] flex gap-2 hover:underline">
                     <ArrowRight />
                     <Link href={"/audit"}>Audit</Link>
