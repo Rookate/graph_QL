@@ -21,8 +21,13 @@ export default function LoginPage() {
 
         try {
             await login(email, password);
-        } catch (err) {
-            setError("Email or Password incorrect.");
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setError(`Email or Password incorrect`);
+            } else {
+                setError("An unknown error occurred.");
+            }
+            console.error("Login error:", err);
         }
     };
 
