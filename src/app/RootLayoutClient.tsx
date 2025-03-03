@@ -5,10 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import LogoutSvg from "@/components/ui/logoutSvg";
 import { logoutUser } from "./lib/auth";
-import { useUser } from "./context/userContext";
 
 export default function RootLayoutClient({ children }: { children: React.ReactNode }) {
-    const { user } = useUser();
     const pathname = usePathname();
 
     const validRoutes = ["/", "/dashboard", "/profile", "/settings", "/auth/login", '/audit'];
