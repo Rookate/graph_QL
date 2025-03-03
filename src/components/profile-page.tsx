@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Icon from './ui/profile-icone';
-import ArrowUp from './ui/arrowUp';
 import ArrowDown from './ui/arrowDown';
 import CloseButton from './ui/closeButton';
 import { useUser } from '@/app/context/userContext';
