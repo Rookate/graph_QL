@@ -87,7 +87,7 @@ export default function ProfilePage() {
                                         <span className="text-xl">{item.title}</span>
                                         <span className="text-2xl transition-transform duration-300 ease-in-out"
                                             style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
-                                            {isOpen ? <ArrowDown /> : <ArrowUp />}
+                                            {<ArrowDown />}
                                         </span>
                                     </div>
 
