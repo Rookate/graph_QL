@@ -43,8 +43,8 @@ export default function LoginPage() {
             <h1 className="text-2xl mb-6">Welcome to Zone 01</h1>
             <form onSubmit={handleSubmit} className="flex flex-col sm:w-2/3 lg:w-1/3 gap-4">
                 <input
-                    type="email"
-                    placeholder="Email"
+                    type="text"
+                    placeholder="Email or Username"
                     className="p-4 border rounded"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

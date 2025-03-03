@@ -5,8 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import LogoutSvg from "@/components/ui/logoutSvg";
 import { logoutUser } from "./lib/auth";
+import { useUser } from "./context/userContext";
+import SvgGitea from "@/components/ui/svgGitea";
 
 export default function RootLayoutClient({ children }: { children: React.ReactNode }) {
+    const { user } = useUser();
     const pathname = usePathname();
 
     const validRoutes = ["/", "/dashboard", "/profile", "/settings", "/auth/login", '/audit'];
@@ -22,7 +25,7 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
                     <Link href={"/"}>
                         <Image className="object-contain" src="/Zone01.png" alt="Description de l'image" width={100} height={100} />
                     </Link>
-                    <div className="ml-auto cursor-pointer" onClick={logoutUser}>
+                    <div className="ml-auto cursor-pointer flex items-center gap-6" onClick={logoutUser}>
                         <LogoutSvg />
                     </div>
                 </div>
@@ -31,42 +34,3 @@ export default function RootLayoutClient({ children }: { children: React.ReactNo
         </>
     );
 }
-
-// "use client"; // Indique que ce fichier doit être traité côté client
-
-// import { usePathname } from "next/navigation";
-// import Link from 'next/link';
-// import Image from 'next/image';
-// import LogoutSvg from "@/components/ui/logoutSvg";
-
-// export default function RootLayoutClient({ children }: { children: React.ReactNode }) {
-//     const pathname = usePathname(); // Utiliser usePathname pour vérifier l'URL
-
-//     // Vérifier si l'on est sur la page de login
-//     const isLoginPage = pathname === "/auth/login";
-
-//     return (
-//         <>
-//             {!isLoginPage && (
-//                 <div className="flex flex-col gap-10 p-12 overflow-auto h-screen ">
-//                     {/* Ne pas afficher le Header si on est sur la page de login */}
-
-//                     <div className="flex items-center sticky top-0 w-full z-5">
-//                         <Link href={"/"}>
-//                             <Image className="object-contain" src="/Zone01.png" alt="Description de l'image" width={100} height={100} />
-//                         </Link>
-//                         <div className="ml-auto">
-//                             <LogoutSvg />
-//                         </div>
-//                     </div>
-//                     {children}
-//                 </div>
-//             )}
-//             {isLoginPage && (
-//                 <div className="h-screen flex justify-center items-center">
-//                     {children}
-//                 </div>
-//             )}
-//         </>
-//     );
-// }
