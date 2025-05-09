@@ -16,7 +16,7 @@ export default function Audit() {
                     <div className="text-[var(--textMinimal)] mt-5 border-b-[.5px] border-neutral-500 pb-3">You have some audits to complete!</div>
                     <div className="pt-4 flex items-center">
                         <div>{audit[0]?.group.object.name} - <span className="text-[var(--textMinimal)]">{audit[0]?.group?.captainLogin}</span></div>
-                        <span className="border pl-4 pr-4 border-[var(--purple)] text-[var(--purple)] ml-auto">{(audit[0]?.private?.code).toUpperCase()}</span>
+                        {audit[0]?.private?.code?.toUpperCase?.() ?? '—'}
                     </div>
                 </>
             ) : (
